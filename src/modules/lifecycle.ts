@@ -4,7 +4,7 @@
  * @since 1.0.0
  */
 
-import BaseApi, { SDKMessagePayload } from './base';
+import { BaseApi, SDKMessagePayload } from './base';
 
 export type LifecycleHook = 'bootstrap' | 'focus' | 'blur' | 'stop';
 
@@ -44,7 +44,7 @@ const STOP_HOOK_FILTER = buildHookFilter('stop');
  * @noInheritDoc
  * @since 1.0.0
  */
-class LifecycleApi extends BaseApi {
+export class LifecycleApi extends BaseApi {
     /**
      * Attach a listener function to be called when PureCloud has loaded the app.
      *
@@ -359,5 +359,3 @@ class LifecycleApi extends BaseApi {
         });
     }
 }
-
-export default LifecycleApi;
