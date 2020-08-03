@@ -20,7 +20,7 @@ const VALID_SUPPLEMENTAL_OPTIONS = ['id', 'markdownMessage', 'timeout', 'showClo
  */
 class AlertingApi extends BaseApi {
     /**
-     * Displays a toast popup.
+     * Displays a toast popup. Toast messages that require manual dismissal (i.e. a timeout of 0) are required to show the close button. Other toast messages require either a timeout for automatic dismissal or a close button. 
      *
      * @param {string} title - Toast title.
      * @param {string} message - Toast Message.  Supports emoticons, emoji (unicode, shortcodes) and markdown (with markdwownMessage boolean).
@@ -30,7 +30,7 @@ class AlertingApi extends BaseApi {
      * @param {string=} options.type - Toast type, valid options are 'error', 'info', 'success'.  (Default is 'info')
      * @param {boolean=} options.markdownMessage - Boolean indicating if the message is in MD.  (Default is true)
      * @param {number=} options.timeout - Time in seconds to show the toast.  Set to 0 to disable automatic dismissal. (Default is 5)
-     * @param {boolean=} options.showCloseButton - Boolean indicating if the close button should be shown. Toasts with type ‘error’ do not allow automatic dismissal and require a close button. (Default is false)
+     * @param {boolean=} options.showCloseButton - Boolean indicating if the close button should be shown. (Default is false)
      *
      * @example
      * myClientApp.alerting.showToastPopup("Hello world", "Hello world, how are you doing today?");
